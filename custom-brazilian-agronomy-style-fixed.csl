@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0">
+  <info>
+    <title>Custom Brazilian Agronomy Style</title>
+    <id>http://www.zotero.org/styles/custom-brazilian-agronomy</id>
+    <link href="http://www.zotero.org/styles/custom-brazilian-agronomy" rel="self"/>
+    <author>
+      <name>Custom Author</name>
+    </author>
+    <category citation-format="author-date"/>
+    <category field="agriculture"/>
+    <updated>2025-06-15T00:00:00+00:00</updated>
+    <summary>Custom CSL style for Brazilian agronomy journals (similar to Pesquisa Agropecuária Brasileira)</summary>
+    <rights>This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+
+  <macro name="author">
+    <names variable="author">
+      <name form="long" and="text" name-as-sort-order="all" sort-separator=", " delimiter="; " initialize-with=". "/>
+    </names>
+  </macro>
+
+  <macro name="title">
+    <text variable="title" font-style="normal"/>
+  </macro>
+
+  <macro name="container-title">
+    <text variable="container-title" font-style="italic"/>
+  </macro>
+
+  <macro name="journal-volume">
+    <group delimiter=", ">
+      <text variable="volume" prefix="v."/>
+      <text variable="page" prefix="p."/>
+    </group>
+  </macro>
+
+  <macro name="issued">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+
+  <macro name="doi">
+    <text variable="DOI" prefix="DOI: "/>
+  </macro>
+
+  <citation>
+    <layout delimiter="; ">
+      <text macro="author"/>
+      <text macro="issued" prefix=", "/>
+    </layout>
+  </citation>
+
+  <bibliography>
+    <layout hanging-indent="true" delimiter=". ">
+      <text macro="author"/>
+      <text macro="title" prefix=". "/>
+      <text macro="container-title" prefix=". "/>
+      <text macro="journal-volume" prefix=", "/>
+      <text macro="issued" prefix=", "/>
+      <text macro="doi" prefix=". "/>
+    </layout>
+  </bibliography>
+</style>
